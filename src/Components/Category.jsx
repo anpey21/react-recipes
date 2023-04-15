@@ -10,7 +10,7 @@ function Category() {
     <BrowserRouter>
     <Navbar>
       <h1>
-        Recipegram
+        Flavagram
       </h1>
       <NavLink>
         <FaPizzaSlice
