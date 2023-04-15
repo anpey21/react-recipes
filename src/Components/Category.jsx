@@ -10,7 +10,7 @@ function Category() {
     <BrowserRouter>
     <Navbar>
       <h1>
-        Your Favorite
+        Recipegram
       </h1>
       <NavLink>
         <FaPizzaSlice
@@ -18,7 +18,7 @@ function Category() {
           color: 'var(--font-brown)',
           fontSize: '1.5rem',
         }} />
-        <p>Pizza</p>
+        <p>Italian</p>
       </NavLink>
       <NavLink>
         <FaHamburger
@@ -26,7 +26,7 @@ function Category() {
           color: 'var(--font-brown)',
           fontSize: '1.5rem',
         }} />
-        <p>Burgers</p>
+        <p>American</p>
       </NavLink>
       <NavLink>
         <GiNoodles
@@ -35,7 +35,7 @@ function Category() {
             fontSize: '1.5rem',
           }}
         />
-        <p>Noodles</p>
+        <p>Thai</p>
       </NavLink>
       <NavLink>
         <GiChopsticks
@@ -43,7 +43,7 @@ function Category() {
           color: 'var(--font-brown)',
           fontSize: '1.5rem',
         }} />
-        <p>Asian</p>
+        <p>Japanese</p>
       </NavLink>
     </Navbar>
     </BrowserRouter>
