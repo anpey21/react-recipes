@@ -65,5 +65,5 @@ const Card = styled.div`
   }
 `
 
-
+/* pushing with a new branch */
 export default Cuisine
