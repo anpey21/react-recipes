@@ -7,12 +7,11 @@ import {NavLink} from 'react-router-dom';
 
 function Category() {
   return (
-    <BrowserRouter>
     <Navbar>
-      <h1>
-        Flavagram
-      </h1>
-      <NavLink>
+      <NavLink to = "/">
+        <h1 class="logo">Flavagram</h1>
+      </NavLink>
+      <NavLink to = "/cuisine/Italian">
         <FaPizzaSlice
         style={{
           color: 'var(--font-brown)',
@@ -20,7 +19,7 @@ function Category() {
         }} />
         <p>Italian</p>
       </NavLink>
-      <NavLink>
+      <NavLink to = "/cuisine/American">
         <FaHamburger
         style={{
           color: 'var(--font-brown)',
@@ -28,7 +27,7 @@ function Category() {
         }} />
         <p>American</p>
       </NavLink>
-      <NavLink>
+      <NavLink to = "/cuisine/Thai">
         <GiNoodles
           style={{
             color: 'var(--font-brown)',
@@ -37,7 +36,7 @@ function Category() {
         />
         <p>Thai</p>
       </NavLink>
-      <NavLink>
+      <NavLink to = "/cuisine/Japanese">
         <GiChopsticks
         style={{
           color: 'var(--font-brown)',
@@ -46,7 +45,6 @@ function Category() {
         <p>Japanese</p>
       </NavLink>
     </Navbar>
-    </BrowserRouter>
   );
 }
 
@@ -58,16 +56,30 @@ const Navbar = styled.div`
   background: linear-gradient(to bottom right, teal, #66CCCC);
   position: sticky;
   top: 0;
-  z-index: 10;
   a {
     text-decoration: none;
     color: var(--font-brown);
     text-align: center;
-  }
+   }
   h1 {
     font-size:3rem;
     font-weight: 700;
     font-family: 'Lobster Two', cursive;
+  }
+  
+  /* Make responsive for mobile */
+  @media (max-width: 768px) {
+    a {
+      display: inline-block;
+      margin: 1rem 0;
+      font-size: .8rem;
+    }
+    Navbar {
+      position: static;
+    }
+    h1 {
+      display: none;
+    }
   }
 `;
 

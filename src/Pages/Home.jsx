@@ -5,9 +5,9 @@ import Category from "../Components/Category";
 function Home() {
   return (
     <div>
-      <Category />
-      <Veggie />
       <Popular />
+      <Veggie />
+      
     </div>
   );
 }
