@@ -5,10 +5,9 @@
 }
 
 :root {
-  --bg-grey: #3e3d3d;
-  --bg-white: #f8efef;
-  --accent-teal: #38f0e1;
   --font-brown: #3b1111;
+  --teal-gradient: linear-gradient(to bottom right, teal, #66CCCC);
+  --secondary-color: #66CCCC;
 }
 
 body {

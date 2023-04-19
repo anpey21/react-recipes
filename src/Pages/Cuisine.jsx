@@ -50,17 +50,16 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
-   :hover {
-    background-color: white;
-    color: teal;
-    
-  }
+  background-color: white;
+  color: teal;
+   
   img {
     width: 100%;
     border-top-left-radius: .8rem;
     border-top-right-radius: 1rem;
+    filter: brightness(0.8);
     :hover {
-      filter: brightness(0.8);
+      filter: brightness(1.1);
       transition: all 0.3s ease-in-out;
     }
   }
@@ -73,9 +72,11 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 200;
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
+    margin: 5px;
+    :hover {
+      color: var(--secondary-color);
   }
 `
 

@@ -52,7 +52,7 @@ const Navbar = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(to bottom right, teal, #66CCCC);
+  background: var(--teal-gradient);
   top: 0;
   a {
     text-decoration: none;
