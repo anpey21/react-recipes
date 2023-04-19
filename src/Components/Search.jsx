@@ -1,22 +1,23 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
 
 function Search() {
+
 const [input, setInput] = useState("")
 
   return (
     <FormStyle>
         <input onChange={(e) => 
+        e.preventDefault() ||
         setInput(e.target.value)} 
         type="text" 
         value={input} 
         placeholder= "Search" 
         />
-        <NavLink to= "/">
+        <button type="submit">
           <FaSearch class= "search" />
-        </NavLink>
+        </button>
       </FormStyle>
   );
 }
@@ -42,6 +43,11 @@ const FormStyle = styled.form`
       border-radius: .5rem;
       background: white;
       margin-right: 1rem;
+    }
+    button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
     }
     .search {
       color: var(--font-brown);
