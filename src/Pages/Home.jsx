@@ -6,9 +6,9 @@ function Home() {
     <div>
       <Popular />
       <Veggie />
-      
     </div>
   );
 }
+
 
 export default Home;

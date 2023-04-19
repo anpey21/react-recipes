@@ -14,7 +14,7 @@ function Category() {
         <FaPizzaSlice
         style={{
           color: 'var(--font-brown)',
-          fontSize: '1.5rem',
+          fontSize: '1rem',
         }} />
         <p>Italian</p>
       </NavLink>
@@ -22,7 +22,7 @@ function Category() {
         <FaHamburger
         style={{
           color: 'var(--font-brown)',
-          fontSize: '1.5rem',
+          fontSize: '1rem',
         }} />
         <p>American</p>
       </NavLink>
@@ -30,7 +30,7 @@ function Category() {
         <GiNoodles
           style={{
             color: 'var(--font-brown)',
-            fontSize: '1.5rem',
+            fontSize: '1rem',
           }}
         />
         <p>Thai</p>
@@ -39,7 +39,7 @@ function Category() {
         <GiChopsticks
         style={{
           color: 'var(--font-brown)',
-          fontSize: '1.5rem',
+          fontSize: '1rem',
         }} />
         <p>Japanese</p>
       </NavLink>
@@ -53,12 +53,14 @@ const Navbar = styled.div`
   align-items: center;
   padding: 1rem 2rem;
   background: linear-gradient(to bottom right, teal, #66CCCC);
-  position: sticky;
   top: 0;
   a {
     text-decoration: none;
     color: var(--font-brown);
     text-align: center;
+    :hover {
+      trasition: filter 0.3s ease-in-out;
+      color: beige;
    }
   h1 {
     font-size:3rem;
@@ -68,17 +70,11 @@ const Navbar = styled.div`
   
   /* Make responsive for mobile */
   @media (max-width: 768px) {
-    a {
-      display: inline-block;
-      margin: 1rem 0;
-      font-size: .8rem;
-    }
-    Navbar {
-      position: static;
-    }
     h1 {
-      display: none;
+      font-size: 1.2rem;
     }
+   p {
+      font-size: .8rem;
   }
 `;
 

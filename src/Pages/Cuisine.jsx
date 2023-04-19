@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 
 const Cuisine = () => {
@@ -23,8 +22,7 @@ const Cuisine = () => {
   }, [params.type])
 
   return <Grid>
-    <Link class="home-btn" to= "/"> HOME </Link>
-    {cuisine.map((item) => {
+        {cuisine.map((item) => {
       return (
       <Card>
         <img src={item.image} alt= "cuisine" />
@@ -44,31 +42,38 @@ grid-gap: 3rem;
 padding: 2rem;
 align-items: center;
 text-align: center;
-.home-btn {
-  text-decoration: none;
-  display: none;
-  color: var(--font-brown);
-  font-family: 'Lobster Two', cursive;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: left;
 }
-@media (max-width: 768px) {
-  .home-btn {
-    display: block;
-    text-align: center;
-    font-size: 3vw;
-  }
 `
 const Card = styled.div`
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  border-radius: .8rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+   :hover {
+    background-color: white;
+    color: teal;
+    
+  }
   img {
     width: 100%;
-    border-radius: 1rem;
+    border-top-left-radius: .8rem;
+    border-top-right-radius: 1rem;
+    :hover {
+      filter: brightness(0.8);
+      transition: all 0.3s ease-in-out;
+    }
   }
+
+  
   a {
     text-decoration: none;
   }
   h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
     text-align: center;
     padding: 1rem;
   }
