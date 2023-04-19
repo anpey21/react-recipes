@@ -80,8 +80,9 @@ const Card = styled.div`
 min-height: 16rem;
 border-radius: 1rem;
 overflow: hidden;
-background:var(--bg-white);
-border: lightgray 1px solid;
+cursor: pointer;
+background: white;
+border: whitesmoke 4px solid;
 img {
     width: 100%;
     height: 100%;
@@ -95,11 +96,10 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: .9rem;
     text-align: center;
-    font-weight: 400;
-    margin: 20px;
-    color: var(--font-brown);
+    margin: 10px;
+    font-weight: bold;
+    color: teal;
     
   }
 `;

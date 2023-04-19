@@ -80,8 +80,8 @@ const Card = styled.div`
 min-height: 16rem;
 border-radius: 1rem;
 overflow: hidden;
-background: var(--bg-white);
-border: 1px solid #ccc;
+background: white;
+border: 4px solid whitesmoke;
 img {
     width: 100%;
     height: 100%;
@@ -94,12 +94,10 @@ img {
   p {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: .9rem;
     text-align: center;
-    font-weight: 400;
-    margin: 20px;
-    color: black;
+    margin: 10px;
+    font-weight: bold;
+    color: teal;
     
   }
 `;
