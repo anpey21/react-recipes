@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import { Link } from 'react-router-dom';
 
 function Veggie() {
 
@@ -19,7 +20,7 @@ function Veggie() {
       setVeggie(JSON.parse(check))
     } else {
       const api = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=118a264c89874b5889a1e38e60b518cd&number=9&tags=vegetarian`
+      `https://api.spoonacular.com/recipes/random?apiKey=118a264c89874b5889a1e38e60b518cd&number=12&tags=vegetarian`
     )
     const data = await api.json()
     localStorage.setItem('veggie', JSON.stringify(data.recipes))
@@ -52,9 +53,10 @@ function Veggie() {
           return (
             <SplideSlide key = {recipe.id}>
               <Card>
-                <img src={recipe.image} alt={recipe.title} />
-                <p>{recipe.title}</p>
-                <p>{recipe.readyInMinutes} minutes</p>
+                <Link class="link" to={`/recipe/${recipe.id}`}>
+                  <img src={recipe.image} alt={recipe.title} />
+                  <p>{recipe.title}</p>
+                </Link>
               </Card>
             </SplideSlide>
           )
@@ -66,7 +68,7 @@ function Veggie() {
 }
 
 const Wrapper = styled.div`
-margin: 4rem;
+margin: 3rem;
 height: 100%;
 }
 h3 {
@@ -82,7 +84,7 @@ border-radius: 1rem;
 overflow: hidden;
 cursor: pointer;
 background: white;
-border: whitesmoke 4px solid;
+border: whitesmoke 1px solid;
 img {
     width: 100%;
     height: 100%;
@@ -90,18 +92,22 @@ img {
     border-radius: 1rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-
   }
   p {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 10px;
-    font-weight: bold;
+    padding: 1.2rem;
     color: teal;
-    
   }
+  .link {
+    text-decoration: none;
+    color: teal;
+  }
+
+  p:hover {
+    color: var(--secondary-color);
 `;
 
 export default Veggie;
