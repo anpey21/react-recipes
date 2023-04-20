@@ -46,8 +46,11 @@ padding: 2rem;
 align-items: center;
 text-align: center;
 }
-@media (max-width: 768px) {
-  padding: 3rem;
+
+@media (max-width: 376px) {
+  max-width: 90%;
+  padding-right: 0;
+
 }
 `
 const Card = styled.div`

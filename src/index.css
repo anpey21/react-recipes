@@ -8,6 +8,7 @@
   --font-brown: #3b1111;
   --teal-gradient: linear-gradient(to bottom right, teal, #66CCCC);
   --secondary-color: #66CCCC;
+  --header-font: "Cookie", sans-serif;
 }
 
 body {
@@ -15,5 +16,5 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   color: var(--font-brown);
-  background-color: beige;
+  background-color: #FFFFF0;
 }

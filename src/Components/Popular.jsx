@@ -56,7 +56,7 @@ function Popular() {
           return (
             <SplideSlide key = {recipe.id}>
               <Card>
-                <Link class= "link" to={`/recipe/${recipe.id}`}>
+                <Link className = "link" to={`/recipe/${recipe.id}`}>
                   <img src={recipe.image} alt={recipe.title} />
                   <p>{recipe.title}</p>
                 </Link>
@@ -76,7 +76,7 @@ height: 100%;
 }
 h3 {
   text-align: center;
-  font-family: 'Lobster Two', cursive;
+  font-family: var(--header-font);
   font-size: 2rem;
   margin-bottom: 2rem;
 `;

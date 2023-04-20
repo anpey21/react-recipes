@@ -24,7 +24,7 @@ function Searched() {
         {searched.map((item) => {
           return (
             <Card>
-              <Link class="link" to={`/recipe/${item.id}`}>
+              <Link className="link" to={`/recipe/${item.id}`}>
               <img src={item.image} alt="searched" />
               <h4>{item.title}</h4>
             </Link>
@@ -58,7 +58,6 @@ const Card = styled.div`
   flex-direction: column;
   cursor: pointer;
   background-color: white;
-  color: teal;
    
   img {
     width: 100%;
@@ -74,6 +73,10 @@ const Card = styled.div`
   
   a {
     text-decoration: none;
+    color: teal;
+    :hover {
+      color: var(--secondary-color);
+    }
   }
   h4 {
     display: flex;

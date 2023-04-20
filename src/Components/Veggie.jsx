@@ -5,7 +5,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import { Link } from 'react-router-dom';
 
-function Veggie() {
+const Veggie = () => {
 
   const [veggie, setVeggie] = useState([]);
   
@@ -75,7 +75,7 @@ h3 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
-  font-family: 'Lobster Two', cursive;
+  font-family: var(--header-font);
 `;
 
 const Card = styled.div`
