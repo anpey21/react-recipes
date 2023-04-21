@@ -74,7 +74,7 @@ display: flex;
   ul {
     margin-top: 2rem;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1020px) {
     flex-direction: column;
     margin: 5rem 0rem 2rem 0rem;
     justify-content: center;
@@ -98,8 +98,13 @@ const Button = styled.button`
   color: teal;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  @media (max-width: 768px) {
+  @media (max-width: 1020px) {
     max-width: 100%;
+  }
+  @media (max-width: 768px) {
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    margin: .5rem;
 `;
 
 const Info = styled.div`
@@ -111,9 +116,11 @@ const Info = styled.div`
   max-width: 100%;
   margin-left: 10rem;
   h3 {
-    font-size: .8rem;
+    font-size: 1rem;
+    font-weight: 200;
+    font-style: italic;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1020px) {
     margin: 0;
     padding: 2rem;
     h3 {
@@ -142,6 +149,7 @@ const Content = styled.div`
   max-width: 100%;
   margin: 1rem;
   line-height: 2rem;
+  font-weight: 200;
 }
 `;
 export default Recipe;
