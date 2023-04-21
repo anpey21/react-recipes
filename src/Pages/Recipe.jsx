@@ -12,12 +12,13 @@ const Recipe = () => {
     const data = await fetch(
       `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=118a264c89874b5889a1e38e60b518cd`
       );
-    const detailData = await data.json();
-    setDetails(detailData);
-    console.log(detailData);
+      const details = await data.json();
+      setDetails(details);
   };
     
-  useEffect(() => {fetchDetails()}, [params.id]);
+  useEffect(() => {
+    fetchDetails();
+  }, []);
 
   const text = details.instructions;
   const regex = /(<([^>]+)>)/gi;
