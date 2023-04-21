@@ -18,7 +18,8 @@ const Recipe = () => {
     
   useEffect(() => {
     fetchDetails();
-  }, []);
+  }, [params.id]);
+
 
   const text = details.instructions;
   const regex = /(<([^>]+)>)/gi;
