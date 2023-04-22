@@ -19,7 +19,7 @@ const Recipe = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps  
   useEffect(() => {
     fetchDetails();
-  }, [params.id]);
+  }, [params.id, fetchDetails]);
 
 
   const text = details.instructions;
