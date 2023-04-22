@@ -9,19 +9,17 @@ const Recipe = () => {
   const [activeTab, setActiveTab] = useState("instructions");
   let params = useParams();
 
-  const fetchDetails = async () => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=118a264c89874b5889a1e38e60b518cd`
-      );
-      const details = await data.json();
-      setDetails(details);
-  };
-  // eslint-disable-next-line react-hooks/exhaustive-deps  
   useEffect(() => {
+    async function fetchDetails() {
+      const data = await fetch(
+        `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=118a264c89874b5889a1e38e60b518cd`
+        );
+        const details = await data.json();
+        setDetails(details);
+    }
     fetchDetails();
-  }, [params.id, fetchDetails]);
-
-
+  }, [params.id]);
+  
   const text = details.instructions;
   const regex = /(<([^>]+)>)/gi;
   const result = text ? text.replace(regex, "") : "";
