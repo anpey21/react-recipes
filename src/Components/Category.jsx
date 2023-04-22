@@ -9,11 +9,7 @@ function Category() {
     <Navbar>
       <Logo to = "/">
         <h1>Flavagram</h1>
-        <GiChefToque
-        style={{
-          color: 'var(--font-brown)',
-          fontSize: '1.5rem',
-        }} />
+        <GiChefToque className ="icons" />
       </Logo>
       <NavLinks>
       <Item to = "/cuisine/American">
@@ -80,6 +76,13 @@ const Navbar = styled.div`
     font-size: 3rem;
     font-family: var(--header-font);
     margin-left: 1rem;
+    }
+    .icons {
+      font-size: 2rem;
+    }
+    .icons:hover {
+      trasition: filter 0.3s ease-in-out;
+      color: beige;
     }
   
   /* Make responsive for mobile */
