@@ -16,7 +16,7 @@ const Recipe = () => {
       const details = await data.json();
       setDetails(details);
   };
-    
+  // eslint-disable-next-line react-hooks/exhaustive-deps  
   useEffect(() => {
     fetchDetails();
   }, [params.id]);
