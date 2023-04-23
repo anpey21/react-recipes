@@ -23,7 +23,7 @@ function Searched() {
       <Grid>
         {searched.map((item) => {
           return (
-            <Card>
+            <Card key={item.id}>
               <Link className="link" to={`/recipe/${item.id}`}>
               <img src={item.image} alt="searched" />
               <h4>{item.title}</h4>

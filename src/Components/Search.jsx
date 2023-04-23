@@ -21,7 +21,7 @@ const submitHandler = (e) => {
         value={input} 
         placeholder= "Search and press ENTER" 
         />
-      <FaSearch class= "search" />
+      <FaSearch className= "search" />
     </FormStyle>
   );
 }

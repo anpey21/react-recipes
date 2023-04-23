@@ -20,13 +20,15 @@ const Recipe = () => {
     fetchDetails();
   }, [params.id]);
   
+  
   const text = details.instructions;
-  const regex = /(<([^>]+)>)/gi;
-  const result = text ? text.replace(regex, "") : "";
+const regex = /(<([^>]+)>|\.(?!\s))/gi; // include both patterns
+const result = text ? text.replace(regex, "") : "";
+
 
 
   return (
-    <DetailsWrapper>
+    <DetailsWrapper key= {details.id}>
       <div>
         <h2>{details.title}</h2>
         <img src={details.image} alt={details.title} />
@@ -67,7 +69,13 @@ display: flex;
     font-weight: 200;
     color: teal;
     text-align: center;
+    @media (max-width: 768px) {
+      font-size:1rem;
+    
+    }
   }
+  
+
   li {
     font-size: 1.2rem;
     line-height: 2.5rem;

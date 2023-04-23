@@ -94,6 +94,9 @@ const Navbar = styled.div`
    p {
       font-size: .6rem;
   }
+  .icons {
+    font-size: 1rem;
+  }
 `;
  const Item = styled(NavLink)`
   padding-left: 2rem;
