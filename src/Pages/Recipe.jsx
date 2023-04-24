@@ -169,15 +169,15 @@ const Info = styled.div`
 }
 `;
 
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  margin: 1rem;
-  line-height: 2rem;
-  font-weight: 200;
-}
-`;
+// const Content = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   max-width: 100%;
+//   margin: 1rem;
+//   line-height: 2rem;
+//   font-weight: 200;
+// }
+// `;
 export default Recipe;
