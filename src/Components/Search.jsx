@@ -9,7 +9,7 @@ const [input, setInput] = useState("")
 const navigate = useNavigate();
 
 const submitHandler = (e) => {
-  navigate(`/searched/${input}`)
+  navigate(`/`)
 }
 
   return (
