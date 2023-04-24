@@ -22,10 +22,8 @@ const Recipe = () => {
   
   
   const text = details.instructions;
-const regex = /(<([^>]+)>|\.(?!\s))/gi; 
-const result = text ? text.replace(regex, "") : "";
-
-
+  const regex = /(<([^>]+)>|\.(?=\S))/gi;
+  const result = text ? text.replace(regex, "") : "";
 
   return (
     <DetailsWrapper key= {details.id}>
@@ -35,12 +33,30 @@ const result = text ? text.replace(regex, "") : "";
       </div>
       <Info>
         <ButtonWrap>
-        <Button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab('instructions')}>Instructions</Button>
-        <Button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}>Ingredients</Button>
+          <Button className={activeTab === 'instructions' ? 'active' : ''} 
+          onClick={() => setActiveTab('instructions')}
+          >
+            Instructions
+          </Button>
+        
+          <Button className={activeTab === 'ingredients' ? 'active' : ''}
+          onClick={() => setActiveTab('ingredients')}
+          >
+            Ingredients
+          </Button>
         </ButtonWrap>
-      <Content>
-        <h3>{result}</h3>
-      </Content>
+        {activeTab === 'instructions' && (
+          <div>
+            <h3>{result}</h3>
+          </div>
+        )}
+        {activeTab === 'ingredients' && (
+          <ul>
+            {details.extendedIngredients.map((ingredient) => (
+              <li key={ingredient.id}>{ingredient.original}</li>
+            ))}
+          </ul>
+        )}
       </Info>
     </DetailsWrapper>
       
@@ -78,11 +94,13 @@ display: flex;
   
 
   li {
-    font-size: 1.2rem;
+    font-size: .8rem;
     line-height: 2.5rem;
+    text-align: left;
   }
   ul {
     margin-top: 2rem;
+    
   }
   @media (max-width: 1020px) {
     flex-direction: column;

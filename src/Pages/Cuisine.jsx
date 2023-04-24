@@ -7,16 +7,10 @@ const Cuisine = () => {
   const [cuisine, setCuisine] = useState([])
   let params = useParams()
   const getCuisine = async (name) => {
-    const check = localStorage.getItem('cuisine')
-    if (check) {
-      setCuisine(JSON.parse(check))
-    } else {
     const data = await fetch (`https://api.spoonacular.com/recipes/complexSearch?apiKey=118a264c89874b5889a1e38e60b518cd&cuisine=${name}`)
     const recipes = await data.json()
-    localStorage.setItem('cuisine', JSON.stringify(recipes.results))
     setCuisine(recipes.results)
     }
-  }
 
   useEffect(() => {
     getCuisine(params.type)
