@@ -45,7 +45,7 @@ const FormStyle = styled.form`
       font-family: 'Poppins', sans-serif;
       font-weight: 200;
       font-size: 1rem;
-      border-radius: .5rem;
+      border-radius: 6px;
       background: white;
       margin-right: 1rem;
     }

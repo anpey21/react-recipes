@@ -22,7 +22,7 @@ const Recipe = () => {
   
   
   const text = details.instructions;
-const regex = /(<([^>]+)>|\.(?!\s))/gi; // include both patterns
+const regex = /(<([^>]+)>|\.(?!\s))/gi; 
 const result = text ? text.replace(regex, "") : "";
 
 
@@ -60,7 +60,8 @@ display: flex;
     color: var(--font-brown);
   }
   img {
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
     max-width: 300px;
     height: auto;
   }

@@ -53,7 +53,7 @@ text-align: center;
 `
 const Card = styled.div`
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  border-radius: .8rem;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -61,8 +61,8 @@ const Card = styled.div`
    
   img {
     width: 100%;
-    border-top-left-radius: .8rem;
-    border-top-right-radius: .8rem;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     filter: brightness(0.8);
     :hover {
       filter: brightness(1.1);

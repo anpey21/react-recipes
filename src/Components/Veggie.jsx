@@ -80,7 +80,7 @@ h3 {
 
 const Card = styled.div`
 min-height: 16rem;
-border-radius: 1rem;
+border-radius: 5px;
 overflow: hidden;
 cursor: pointer;
 background: white;
@@ -89,7 +89,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: 5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
