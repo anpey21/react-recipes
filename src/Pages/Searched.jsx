@@ -74,9 +74,6 @@ const Card = styled.div`
   a {
     text-decoration: none;
     color: teal;
-    :hover {
-      color: var(--secondary-color);
-    }
   }
   h4 {
     display: flex;
@@ -88,7 +85,7 @@ const Card = styled.div`
     padding-bottom: 1rem;
     margin: 5px;
     :hover {
-      color: var(--secondary-color);
+      color: var(--font-brown);
   }
 `
 

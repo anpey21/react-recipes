@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
 
@@ -11,6 +12,11 @@ const navigate = useNavigate();
 const submitHandler = (e) => {
   e.preventDefault();
   navigate(`/searched/${input}`);
+  setInput("");
+}
+
+const clearInput = () => {
+  setInput("");
 }
 
   return (
@@ -20,9 +26,12 @@ const submitHandler = (e) => {
         setInput(e.target.value)}
         type="text" 
         value={input} 
-        placeholder= "Search and press ENTER" 
+        placeholder= "Search for a recipe" 
         />
-      <FaSearch className= "search" />
+      
+      <Link to={`/searched/${input}`}>
+        <FaSearch className= "search" onClick={clearInput} />
+      </Link>
     </FormStyle>
   );
 }

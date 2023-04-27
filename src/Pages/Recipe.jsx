@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Recipe = () => {
 
   const [details, setDetails] = useState({});
-  const [activeTab, setActiveTab] = useState("instructions");
+  const [activeTab, setActiveTab] = useState("ingredients");
   let params = useParams();
 
   useEffect(() => {
@@ -20,11 +20,14 @@ const Recipe = () => {
     fetchDetails();
   }, [params.id]);
   
-  
   const text = details.instructions;
   const regex = /(<([^>]+)>|\.(?=\S))/gi;
-  const result = text ? text.replace(regex, "") : "";
+  let result = text ? text.replace(regex, "") : "";
 
+  if (!result.endsWith(".") && !result.endsWith("!") && !result.endsWith("?")) {
+    result += "."
+  }
+  
   return (
     <DetailsWrapper key= {details.id}>
       <div>
@@ -33,35 +36,39 @@ const Recipe = () => {
       </div>
       <Info>
         <ButtonWrap>
-          <Button className={activeTab === 'instructions' ? 'active' : ''} 
-          onClick={() => setActiveTab('instructions')}
-          >
-            Instructions
-          </Button>
-        
-          <Button className={activeTab === 'ingredients' ? 'active' : ''}
+          <Button className={activeTab === 'ingredients' ? 'active' : ''} 
           onClick={() => setActiveTab('ingredients')}
           >
             Ingredients
           </Button>
+        
+          <Button className={activeTab === 'instructions' ? 'active' : ''}
+          onClick={() => setActiveTab('instructions')}
+          >
+            Instructions
+          </Button>
         </ButtonWrap>
-        {activeTab === 'instructions' && (
-          <div>
-            <h3>{result}</h3>
-          </div>
-        )}
         {activeTab === 'ingredients' && (
-          <ul>
-            {details.extendedIngredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
+        <ul>
+          {details.extendedIngredients.map((ingredient) => (
+            <li key={ingredient.id}>{ingredient.original}</li>
+          ))}
+        </ul>
         )}
+        
+        
+      {activeTab === 'instructions' && (
+       <div>
+        <h3>
+          {result}
+        </h3>
+       </div>
+      )}
+  
       </Info>
     </DetailsWrapper>
-      
-  )
-}
+  );
+};
 
 const DetailsWrapper = styled.div`
 display: flex;
