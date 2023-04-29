@@ -11,11 +11,17 @@ const Recipe = () => {
 
   useEffect(() => {
     async function fetchDetails() {
+      const check = localStorage.getItem(params.id);
+      if (check) {
+        setDetails(JSON.parse(check));
+        return;
+      }
       const data = await fetch(
         `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=118a264c89874b5889a1e38e60b518cd`
         );
         const details = await data.json();
         setDetails(details);
+        localStorage.setItem(params.id, JSON.stringify(details));
     }
     fetchDetails();
   }, [params.id]);
@@ -50,13 +56,13 @@ const Recipe = () => {
         </ButtonWrap>
         {activeTab === 'ingredients' && (
         <ul>
-          {details.extendedIngredients.map((ingredient) => (
-            <li key={ingredient.id}>{ingredient.original}</li>
+          {details.extendedIngredients && details.extendedIngredients.map((ingredient) => (
+            <li key={ingredient.id}>
+              {ingredient.original}
+            </li>
           ))}
         </ul>
         )}
-        
-        
       {activeTab === 'instructions' && (
        <div>
         <h3>
