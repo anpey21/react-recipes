@@ -27,12 +27,13 @@ const Recipe = () => {
   }, [params.id]);
   
   const text = details.instructions;
-  const regex = /(<([^>]+)>|\.(?=\S))/gi;
-  let result = text ? text.replace(regex, "") : "";
+const regex = /(<([^>]+)>|\.(?=\S)|([A-Z][^.!?]*)(?=\s|$))/gi;
+let result = text ? text.replace(regex, "$1 ") : "";
 
-  if (!result.endsWith(".") && !result.endsWith("!") && !result.endsWith("?")) {
-    result += "."
-  }
+if (!result.endsWith(".") && !result.endsWith("!") && !result.endsWith("?")) {
+  result += ".";
+}
+
   
   return (
     <DetailsWrapper key= {details.id}>
